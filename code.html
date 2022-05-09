@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Decode Game</title>
+  <link href="code.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <h1 style="text-align: left;">ASCII Encoding / Decoding :</h1>
+
+  <p> Your ship has lost the route! Luckily, you found a cryptic set of directions. Decode the message using ASCII to move closer to the Earth ! </p>
+  <p> Hint: Use ASCII decoding to find the message. <br></p>
+  <h1>94 104 112 125 85 65 53 58</h1>
+
+  <label for="code"><p>Solve the code!:</p></label>
+<input id="guess" type="text" id="code" name="code">
+  <input onclick="getVal()" type="submit" value="submit">
+
+<!--   here, we'll display whether the user was correct or wrong -->
+<div id="result">
+  
+</div>
+  
+
+
+ <script>
+    // this is the answer
+    let ans = "^hp}UA5:";
+
+    // when submit button is clicked, this function is invoked
+    function getVal() {
+      // get value from input field
+      let value = document.querySelector("#guess").value;
+      
+      // get access to result div to print result
+      let result = document.querySelector("#result");
+      console.log(value);
+      debugger;
+      // if value is equal to the answer then print "correct" else print "incorrect"
+      if (value === ans) {
+        console.log("correct");
+        alert("Congratulations, you moved closer to the destination!!. Click Continue");
+        result.innerHTML = `<p>CORRECT!</p>`;
+        document.getElementById("con").style.display="block";
+      } else {
+        console.log("incorrect");
+        alert("Try again, to move ahead in the journey!!");
+        result.innerHTML = `<p>INCORRECT!</p>`;
+      }
+      
+    }
+  
+   
+ </script>
+  <a id="con" style="display: none;" href="urlManipulation.html"<button class="blbutton center"> Continue </button></a>
+  
+</body>
+
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+  
+</html>
